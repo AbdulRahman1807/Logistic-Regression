@@ -76,8 +76,13 @@ for col in feature_cols:
             min_v, max_v, step = 10, 500, 1
         else:
             min_v, max_v, step = 0, 1000, 1
-        inputs[col] = st.sidebar.number_input(col, min_value=min_v, max_value=max_v, value=float(default), step=step)
-
+        inputs[col] = st.sidebar.number_input(
+    col,
+    min_value=float(min_v),
+    max_value=float(max_v),
+    value=float(default),
+    step=float(step)
+)
 if st.sidebar.button("Predict"):
     x = np.array([inputs[c] for c in feature_cols], dtype=float).reshape(1, -1)
     try:
