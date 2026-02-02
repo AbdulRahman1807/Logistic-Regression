@@ -4,7 +4,7 @@ import joblib
 
 st.set_page_config(page_title="Heart Disease Risk Predictor", layout="wide")
 
-model = joblib.load("logistic_model.pkl")
+model = joblib.load("heart_model.pkl")
 scaler = joblib.load("scaler.pkl")
 
 def yes_no_select(label, default=0):
